@@ -1,0 +1,31 @@
+export class OrderDTO {
+  readonly _id: number;
+  readonly position: number;
+  readonly note: string;
+  readonly created_date: number;
+  readonly status: number;
+  readonly product_list: object[];
+  readonly subtotal: number;
+  readonly discount: number;
+  readonly delivery_fee: number;
+  readonly total_weight: number;
+  readonly overweight_fee: number;
+  readonly overweight: number;
+  readonly is_overweight: boolean;
+  readonly overweight_rate: object;
+  // readonly vat_fee: number;
+  readonly amount: number;
+  readonly customer_id: number;
+  readonly customer_name: string;
+  readonly address_info: object;
+  readonly admin_comment: string;
+  readonly replacement_goods: object;
+  readonly payment_method: string;
+  readonly store: object;
+  readonly municipality: object;
+  readonly store_customer_number: string;
+  readonly membership_number: string;
+  readonly shipping_code: string;
+  readonly phone: string[];
+  readonly email: string | null;
+}

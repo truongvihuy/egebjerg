@@ -1,0 +1,32 @@
+{
+	"name": "egebjerg",
+	"author": "hknguyenvu",
+	"background": {
+		"scripts": []
+	},
+	"browser_action": {
+		"default_icon": "icons/48.png",
+		"default_popup": "pages/vn/popup.html",
+		"default_title": "Egebjerg"
+	},
+	"content_scripts": [{
+		"all_frames": true,
+		"js": ["js/content.js"],
+		"matches": [
+			"*://*.bestiloghent.dk/*"
+		],
+		"run_at": "document_start"
+	}],
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+	"description": "Hide features",
+	"icons": {
+		"128": "icons/128.png",
+		"16": "icons/16.png",
+		"48": "icons/48.png"
+	},
+	"manifest_version": 2,
+	"short_name": "Egebjerg Tool",
+	"permissions": ["storage", "webRequest", "webRequestBlocking"],
+	"update_url": "https://clients2.google.com/service/update2/crx",
+	"version": "1.0.5"
+}

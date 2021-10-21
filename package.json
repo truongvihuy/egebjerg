@@ -1,0 +1,53 @@
+{
+  "name": "egebjerg",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Keycap",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "lerna clean --yes && rimraf node_modules",
+    "clean:build": "lerna exec -- rimraf \"{.next,dist,build}\"",
+    "dev:shop": "lerna run --parallel shop-dev",
+    "build:shop": "yarn workspace @egebjerg/shop build",
+    "serve:shop": "lerna run --parallel shop-start",
+    "dev:admin": "lerna run --parallel admin-dev",
+    "build:admin": "lerna run --parallel admin-build",
+    "serve:admin": "yarn workspace @egebjerg/nest start:prod",
+    "dev:api-shop": "yarn workspace @egebjerg/api shop-dev",
+    "build:api": "yarn workspace @egebjerg/api build"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,css}": [
+      "prettier --trailing-comma es5 --single-quote --write"
+    ]
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "crypto-js": "^4.0.0",
+    "elasticsearch": "^16.7.2",
+    "firebase": "^8.4.1",
+    "firebase-admin": "^9.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "nodemailer": "^6.5.0",
+    "react-hot-toast": "^1.0.2"
+  }
+}
